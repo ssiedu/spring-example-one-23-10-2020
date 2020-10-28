@@ -5,6 +5,18 @@ public class Account {
 	private int code;
 	private String name;
 	private int balance;
+	private Branch branch;
+	
+	
+	public Account() {
+		System.out.println("Account Instance Created...");
+	}
+	public Branch getBranch() {
+		return branch;
+	}
+	public void setBranch(Branch branch) {
+		this.branch = branch;
+	}
 	public int getCode() {
 		return code;
 	}
@@ -25,7 +37,7 @@ public class Account {
 	}
 	@Override
 	public String toString() {
-		return "Account [code=" + code + ", name=" + name + ", balance=" + balance + "]";
+		return "Account [code=" + code + ", name=" + name + ", balance=" + balance + ", branch=" + branch + "]";
 	}
 	
 	

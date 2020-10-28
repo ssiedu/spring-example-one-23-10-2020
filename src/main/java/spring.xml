@@ -8,16 +8,26 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<bean id="ac1" class="com.ssi.Account">
+	<bean id="account" class="com.ssi.Account" scope="prototype" >
 		<property name="code" value="5001"/>
 		<property name="name" value="Xyz"/>
 		<property name="balance" value="65000"/>
+		<property name="branch" ref="branch2"/>
 	</bean>
 	
+	<bean id="branch1" class="com.ssi.Branch">
+		<property name="code" value="B1001"/>
+		<property name="name" value="Palasia"/>
+		<property name="address" value="Indore"/>
+	</bean>
+	
+	<bean id="branch2" class="com.ssi.Branch">
+		<property name="code" value="B2002"/>
+		<property name="name" value="LIG"/>
+		<property name="address" value="Bhopal"/>
+	</bean>
 
-
-
-
+	
 
 
 </beans>
