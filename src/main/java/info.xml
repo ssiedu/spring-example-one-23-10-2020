@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="project1" class="com.ssi.Project">
+		<property name="pcode" value="P111"/>
+		<property name="title" value="AcSw"/>
+	</bean>
+
+	<bean id="project2" class="com.ssi.Project">
+		<property name="pcode" value="P222"/>
+		<property name="title" value="BnkSw"/>
+	</bean>
+	
+	<bean id="employee" class="com.ssi.Employee">
+		<property name="eno" value="101"/>
+		<property name="ename" value="ABC"/>
+		
+		<property name="projects">
+			<list>
+				<ref bean="project1"/>
+				<ref bean="project2"/>
+			</list>
+		</property>
+		
+		
+		<property name="addresses">
+			<props>
+					<prop key="temporary">Indore</prop>
+					<prop key="permanent">Bhopal</prop>
+			</props>
+		</property>
+		<property name="emails">
+			<map>
+				<entry key="personal" value="abc111@gmail.com"/>
+				<entry key="official" value="abc@xyz.com"/>			
+			</map>
+		</property>
+		
+		
+		
+		<property name="mobiles">
+			<set>
+				<value>9826012345</value>
+				<value>9955433221</value>
+				<value>9826012345</value>
+			</set>
+		</property>
+	</bean>
+	
+
+
+</beans>
+
+

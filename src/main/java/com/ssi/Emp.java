@@ -7,9 +7,6 @@ public class Emp implements InitializingBean, DisposableBean {
 	private int eno;
 	private String ename;
 	
-	
-	
-	
 	public void stop() {}
 	
 	public void afterPropertiesSet() throws Exception {
