@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="customer" class="com.ssi.Customer">
+		<constructor-arg value="101" />
+		<constructor-arg value="amit" />
+		<property name="address">
+			<bean class="com.ssi.Address">
+				<constructor-arg value="555"/>
+				<constructor-arg value="mgroad"/>
+				<constructor-arg value="bhopal"/>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 
+		<bean id="customer" class="com.ssi.Customer"> 
+			<constructor-arg value="101"/> 
+			<constructor-arg value="amit"/> 
+			<property name="address" ref="address"/> 
+		</bean> 
+	-->
+	<!-- 
+		<bean id="customer" class="com.ssi.Customer"> 
+			<constructor-arg ref="address" index="2"/> 
+			<constructor-arg value="101" index="0"/> 
+			<constructor-arg value="amit" index="1"/> 
+		</bean> 
+	-->
+
+	<bean id="address" class="com.ssi.Address">
+		<constructor-arg value="5001" />
+		<constructor-arg value="ab-road" />
+		<constructor-arg value="indore" />
+	</bean>
+
+</beans>
+
