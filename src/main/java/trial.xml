@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="info" abstract="true">
+		<property name="ctype" value="regular"/>
+		<property name="creditLimit" value="10000"/>
+	</bean>
+	
+	<bean id="c1" class="com.ssi.Customer" parent="info">
+		<property name="code" value="111"/>
+		<property name="name" value="abc"/>
+	</bean>
+	
+	<bean id="c2" class="com.ssi.Customer" parent="info">
+		<property name="code" value="222"/>
+		<property name="name" value="xyz"/>
+	</bean>
+	
+	<bean id="c3" class="com.ssi.Customer" parent="info">
+		<property name="code" value="333"/>
+		<property name="name" value="pqr"/>
+		<property name="creditLimit" value="20000"/>
+	</bean>
+	
+</beans>
+
